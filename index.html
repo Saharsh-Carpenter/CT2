@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artificial Intelligence</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Set background image for the entire page */
+    body {
+      background-image: url('https://cdn.pixabay.com/photo/2022/01/22/09/03/polygons-6956577_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .card {
+      margin-bottom: 20px;
+    }
+
+    /* AI Description Section Styling */
+    .ai-info {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 40px;
+      text-align: justify;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      position: relative;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    /* Overlay for readability */
+    .ai-info::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      /* Dark overlay */
+      border-radius: 10px;
+    }
+
+    .ai-info p {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Make the bottom three containers have a white background */
+    .bg-white {
+      background-color: white;
+      color: black;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background: url('https://media.istockphoto.com/id/2075770044/vector/hi-tech-grey-background-with-various-technology-elements-vector-illustration-of-circles-and.jpg?s=612x612&w=0&k=20&c=2IYWLn1CjI8h3NHiKfp0N_847l8kbNFh1l10rovSVg8=') no-repeat center center/cover;
+    }
+
+    h1 {
+      color: black;
+    }
+
+    #how-ai-works {
+      background-image: url('https://img.freepik.com/free-vector/abstract-perspective-grid-lines-black-background_1017-47349.jpg?ga=GA1.1.2003106308.1738344774&semt=ais_hybrid');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    #how-ai-works::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(56, 50, 50, 0.3);
+      /* Light semi-transparent overlay */
+      border-radius: 10px;
+    }
+
+    #how-ai-works * {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      background: #1a1a1a;
+      padding: 5px 15px;
+    }
+
+    .nav-logo {
+      width: 40px;
+      /* Adjust size */
+      height: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+      /* Optional: Makes it round */
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin-left: auto;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <img src="https://img.freepik.com/premium-photo/artificial-intelligence-hologram_99433-297.jpg" alt="AI Logo"
+        class="nav-logo">
+      <a class="navbar-brand" href="#">AI Information Webpage</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#how-ai-works">How AI Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#types">Types</a></li>
+          <li class="nav-item"><a class="nav-link" href="#uses">Uses</a></li>
+
+          <!-- About Us with Two Drawers -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+              About Us
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://saharsh-carpenter.github.io/CT/">Saharsh Carpenter</a></li>
+              <li><a class="dropdown-item" href="https://anshita4566.github.io/copilot-codespaces-vscode/">Anshita Gupta</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">
+              <img src="https://www.vectorlogo.zone/logos/wikipedia/wikipedia-tile.svg" alt="Wikipedia Logo"
+                style="height: 30px; width: auto;">
+              for more info
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <h1 class="text-center my-4"
+      style="color: rgb(240, 239, 239);font-family: 'Times New Roman', Times, serif; text-decoration: underline; text-decoration-color: rgb(255, 173, 173);">
+      Artificial Intelligence</h1>
+
+    <p class="text-center"><strong>Learn about AI, its features, types, and uses.</strong></p>
+
+    <!-- AI Information Section with Background Image -->
+    <div class="ai-info">
+      <p>
+        Artificial Intelligence (AI) is a branch of computer science that aims to create systems capable of
+        performing tasks that typically require human intelligence. These tasks include learning from data,
+        recognizing patterns, understanding natural language, making decisions, and solving complex problems.
+        AI has evolved significantly over the years, giving rise to machine learning, deep learning, and
+        neural networks, which enable computers to analyze vast amounts of data and improve performance over time.
+      </p>
+      <p>
+        AI is categorized into different types, including Narrow AI, which is designed for specific tasks such
+        as voice assistants, General AI, which aims to mimic human intelligence across a broad spectrum of tasks,
+        and Super AI, an advanced form of intelligence surpassing human capabilities. The impact of AI is seen
+        in various industries such as healthcare, finance, education, entertainment, and autonomous vehicles.
+        As technology continues to advance, AI is expected to play a crucial role in shaping the future of
+        automation, decision-making, and problem-solving across multiple domains.
+      </p>
+    </div>
+
+    <!-- How AI Works Section -->
+    <div class="text-center my-5">
+      <h2
+        style="color: rgb(240, 239, 239); font-weight: bold;text-decoration: underline; text-decoration-color: rgb(255, 173, 173);font-family: 'Times New Roman', Times, serif;">
+        How Artificial Intelligence Works?</h2>
+    </div>
+    <div class="row mt-5">
+
+      <div class="col-md-12">
+        <div class="bg-white" id="how-ai-works">
+
+          <ul>
+            <li><strong>Data Collection:</strong> AI models can be trained on large datasets (collections of samples,
+              each representing a data point of input and output) and used to classify data or (as the focus of our
+              article) perform exciting tasks such as making predictions and assigning predicted outcomes for new
+              incoming data (new inputs).</li>
+            <br>
+            <li><strong>Data Processing:</strong> Once data is gathered and inputted, the next step is to allow AI to
+              decide what to do with the data. The AI sorts and deciphers the data using patterns it has been programmed
+              to learn until it recognizes similar patterns in the data that is being filtered into the system.</li>
+            <br>
+            <li><strong>Machine Learning Algorithms:</strong> Machine learning is a subset of artificial intelligence
+              that automatically enables a machine or system to learn and improve from experience. Instead of explicit
+              programming, machine learning uses algorithms to analyze large amounts of data, learn from the insights,
+              and then make informed decisions.</li>
+            <br>
+            <li><strong>Training and Testing:</strong> The AI runs a series of tests or simulations, makes predictions,
+              then compares those predictions against an expected goal or outcome. Over multiple training rounds, the
+              model adjusts. Over time, the delta between prediction and expected results should get smaller, leading to
+              more accurate predictions.</li>
+            <br>
+            <li><strong>Decision Making:</strong> By automating data collection, analysis, and reporting, AI enables
+              decision-makers to access relevant information quickly and easily, eliminating the need for manual data
+              gathering and allowing teams to focus on higher-value tasks.</li>
+            <br>
+            <li><strong>Continuous Improvement:</strong> AI facilitates continuous improvement by analyzing large
+              volumes of data from various sources to identify patterns, predict potential issues, and suggest optimized
+              processes, allowing for iterative enhancements and proactive adjustments to systems without manual
+              intervention, ultimately leading to increased efficiency and quality in a company's operations; key
+              applications include predictive maintenance, process optimization, and quality control analysis.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="text-center my-5">
+      <h2
+        style="color: rgb(240, 239, 239); font-weight: bold;text-decoration: underline; text-decoration-color: rgb(255, 173,173);font-family: 'Times New Roman', Times, serif;">
+        What are the features of Artificial Intelligence?</h2>
+    </div>
+
+    <div class="row mt-5" id="features">
+      <div class="col-md-4">
+        <div class="bg-white p-4"
+          style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background: url('https://media.istockphoto.com/id/2075770044/vector/hi-tech-grey-background-with-various-technology-elements-vector-illustration-of-circles-and.jpg?s=612x612&w=0&k=20&c=2IYWLn1CjI8h3NHiKfp0N_847l8kbNFh1l10rovSVg8=') no-repeat center center/cover;">
+          <h5 class="text-center">Machine Learning</h5>
+          <p>
+            Machine Learning is a subset of AI that allows systems to automatically learn and improve from experience
+            without being explicitly programmed. It enables computers to identify patterns, make decisions, and improve
+            performance over time by analyzing large datasets.
+          </p>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4"
+          style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background: url('https://media.istockphoto.com/id/2075770044/vector/hi-tech-grey-background-with-various-technology-elements-vector-illustration-of-circles-and.jpg?s=612x612&w=0&k=20&c=2IYWLn1CjI8h3NHiKfp0N_847l8kbNFh1l10rovSVg8=') no-repeat center/cover;">
+          <h5 class="text-center">Natural Language Processing</h5>
+          <p>
+            Natural Language Processing (NLP) is a branch of AI that helps machines understand, interpret, and generate
+            human language. It is used in applications like chatbots, language translation, and voice recognition,
+            enabling computers to interact with humans more naturally.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Computer Vision</h5>
+          <p>
+            Computer Vision allows machines to interpret and make decisions based on visual data from the world. It’s
+            used in facial recognition, image classification, object detection, and even self-driving cars to enable
+            machines to “see” and understand visual inputs.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Automation</h5>
+          <p>
+            Automation refers to the use of AI to perform tasks without human intervention. It includes robotic process
+            automation (RPA), intelligent workflows, and autonomous systems that can perform repetitive tasks, allowing
+            businesses to operate more efficiently.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Robotics</h5>
+          <p>
+            Robotics is the integration of AI into physical machines to enable them to perform tasks autonomously or
+            semi-autonomously. AI-driven robots are used in industries like manufacturing, healthcare, and space
+            exploration to perform tasks that would be dangerous or difficult for humans.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Chatbot</h5>
+          <p>
+            A Chatbot is an AI-based software designed to simulate human conversation through text or voice. They are
+            used in customer service, providing instant responses to queries, handling routine tasks, and improving user
+            engagement on websites or messaging platforms.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Types Section -->
+    <div class="text-center my-5">
+      <h2
+        style="color: rgb(240, 239, 239); font-weight: bold;text-decoration: underline; text-decoration-color: rgb(255,173,173);font-family: 'Times New Roman', Times, serif;">
+        What are the types of Artificial Intelligence?</h2>
+    </div>
+
+    <div class="row mt-5" id="types">
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Narrow AI</h5>
+          <p>
+            Narrow AI, sometimes called Weak AI, encompasses artificial intelligence systems purpose-built for specific,
+            well-defined tasks or applications. These AI systems excel at executing precise functions within a limited
+            scope, and their capabilities remain restricted when compared to human intelligence. </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">General AI</h5>
+          <p>
+            Artificial general intelligence (AGI) refers to the hypothetical intelligence of a machine that possesses
+            the ability to understand or learn any intellectual task that a human being can. It is a type of artificial
+            intelligence (AI) that aims to mimic the cognitive abilities of the human brain. </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Super AI</h5>
+          <p>
+            Super AI, or artificial superintelligence (ASI), is a hypothetical AI system that is more intelligent than
+            humans. It could have the ability to perform tasks that humans are currently good at, such as
+            problem-solving, creativity, and emotional intelligence. </p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Reactive Machines</h5>
+          <p>
+            A reactive machine is a type of artificial intelligence (AI) that provides a predictable output based on a
+            given input. Reactive machines are designed to perform a specific task and are unable to learn from past
+            experiences or predict future outcomes</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Limited Memory AI</h5>
+          <p>
+            Limited memory AI is a type of artificial intelligence (AI) that can use recent data to improve its
+            predictions and decisions. It can store and recall past events and outcomes, and use this information to
+            make better decisions. </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Theory of Mind AI</h5>
+          <p>
+            Theory of Mind AI refers to AI's ability to understand and predict human emotions, thoughts, and intentions.
+            While it promises more empathetic machines, it raises ethical concerns like privacy, bias, and potential
+            manipulation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Uses Section -->
+    <div class="text-center my-5">
+      <h2
+        style="color: rgb(230, 226, 226); font-weight: bold;text-decoration: underline; text-decoration-color: rgb(255, 173,173);font-family: 'Times New Roman', Times, serif;">
+        What are the uses of Artificial Intelligence?</h2>
+    </div>
+
+    <div class="row mt-5" id="uses">
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Healthcare</h5>
+          <p>
+            AI is revolutionizing healthcare by assisting in diagnostics, personalized treatment plans, and drug
+            discovery. Machine learning algorithms analyze medical images, predict patient outcomes, and help doctors
+            make better decisions.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Autonomous Vehicles</h5>
+          <p>
+            AI powers self-driving cars by processing sensor data, recognizing objects, and making real-time driving
+            decisions. It promises to make transportation safer, more efficient, and reduce human error in driving.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Finance</h5>
+          <p>
+            AI is used in the finance industry for algorithmic trading, risk assessment, fraud detection, and customer
+            service. AI models can predict market trends, assist in financial decision-making, and detect fraudulent
+            activities in real-time.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Retail</h5>
+          <p>
+            AI is used in the retail industry to enhance customer experiences through personalized recommendations,
+            demand forecasting, and inventory management. AI helps retailers optimize sales, improve customer service,
+            and streamline supply chain processes.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Manufacturing</h5>
+          <p>
+            Artificial intelligence (AI) in manufacturing uses machine learning and algorithms to analyze data,
+            optimizing production processes. AI enhances product quality, reduces operational costs, and boosts
+            efficiency, ensuring smoother workflows and better output
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <h5 class="text-center">Entertainment</h5>
+          <p>
+            AI is transforming the entertainment industry by personalizing content recommendations, enhancing CGI, and
+            even generating music or art. Streaming platforms like Netflix and Spotify use AI to suggest shows, movies,
+            and music based on user preferences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>© 2025 AI Information. All Rights Reserved.<br> Created by- Saharsh Carpenter (24P03F0026) <br> Anshita Gupta
+      (24P03F0049)</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
